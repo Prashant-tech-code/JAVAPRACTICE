@@ -38,11 +38,11 @@ pipeline {
 
         stage('Run Prime Number Program') {
             steps {
-                echo '🚀 Running Primeno.java using Scanner input...'
+                echo '🚀 Running Prime.java using Scanner input...'
                 bat '''
                     cd Mp
                     echo 17>primeinput.txt
-                    mvn exec:java -Dexec.mainClass=myjava.Primeno -Dexec.classpathScope=test < primeinput.txt
+                    mvn exec:java -Dexec.mainClass=myjava.Prime -Dexec.classpathScope=test < primeinput.txt
                 '''
             }
         }
@@ -57,7 +57,7 @@ pipeline {
                     echo 89>>arrayinput.txt
                     echo 23>>arrayinput.txt
                     echo 67>>arrayinput.txt
-                    mvn exec:java -Dexec.mainClass=myjava.ArrayHighest -Dexec.classpathScope=test < arrayinput.txt
+                    mvn exec:java -Dexec.mainClass=myjava.Highestfromarray -Dexec.classpathScope=test < arrayinput.txt
                 '''
             }
         }
