@@ -2,25 +2,59 @@ pipeline {
     agent any
 
     tools {
-        maven 'maven'
-        
+        maven 'maven'   // Maven tool name from Jenkins
     }
 
     stages {
+
         stage('Checkout Code') {
             steps {
                 git branch: 'Java_Practice', url: 'https://github.com/Prashant-tech-code/JAVAPRACTICE.git'
             }
         }
 
-        stage('Build and Run Highestno') {
+        stage('Compile Java Code') {
             steps {
+                echo '🔧 Compiling all Java classes...'
+                bat 'mvn clean test-compile'
+            }
+        }
+
+        stage('Run Highest Number Program') {
+            steps {
+                echo '🚀 Running Highestno.java using Scanner input...'
                 bat '''
                     cd Mp
                     echo 10>input.txt
                     echo 25>>input.txt
                     echo 30>>input.txt
-                    mvn clean test-compile exec:java -Dexec.mainClass=myjava.Highestno -Dexec.classpathScope=test < input.txt
+                    mvn exec:java -Dexec.mainClass=myjava.Highestno -Dexec.classpathScope=test < input.txt
+                '''
+            }
+        }
+
+        stage('Run Prime Number Program') {
+            steps {
+                echo '🚀 Running Primeno.java using Scanner input...'
+                bat '''
+                    cd Mp
+                    echo 17>primeinput.txt
+                    mvn exec:java -Dexec.mainClass=myjava.Primeno -Dexec.classpathScope=test < primeinput.txt
+                '''
+            }
+        }
+
+        stage('Run Array Highest Program') {
+            steps {
+                echo '🚀 Running ArrayHighest.java using Scanner input...'
+                bat '''
+                    cd Mp
+                    echo 12>arrayinput.txt
+                    echo 45>>arrayinput.txt
+                    echo 89>>arrayinput.txt
+                    echo 23>>arrayinput.txt
+                    echo 67>>arrayinput.txt
+                    mvn exec:java -Dexec.mainClass=myjava.ArrayHighest -Dexec.classpathScope=test < arrayinput.txt
                 '''
             }
         }
@@ -28,10 +62,10 @@ pipeline {
 
     post {
         success {
-            echo '✅ Build succeeded!'
+            echo '✅ All three Java programs executed successfully!'
         }
         failure {
-            echo '❌ Build failed!'
+            echo '❌ Build failed — check which stage failed above.'
         }
     }
 }
