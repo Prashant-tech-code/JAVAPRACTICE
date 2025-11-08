@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        maven 'maven'   // Maven tool name from Jenkins
+        maven 'maven'
     }
 
     stages {
@@ -16,7 +16,10 @@ pipeline {
         stage('Compile Java Code') {
             steps {
                 echo '🔧 Compiling all Java classes...'
-                bat 'mvn clean test-compile'
+                bat '''
+                    cd Mp
+                    mvn clean test-compile
+                '''
             }
         }
 
