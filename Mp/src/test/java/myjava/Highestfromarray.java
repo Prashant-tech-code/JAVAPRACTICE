@@ -5,7 +5,7 @@ public class Highestfromarray {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		int a[]= {100,12,22,12};
+		int a[]= {100,12,22,122};
 		int highest=a[0];
 		
 		for(int i =0; i<a.length;i++ ) {
@@ -14,7 +14,7 @@ public class Highestfromarray {
 			}
 		}
 		
-		System.out.println(highest);
+		System.out.println(highest + ": is the highest no from array List");
 	}
 
 }
