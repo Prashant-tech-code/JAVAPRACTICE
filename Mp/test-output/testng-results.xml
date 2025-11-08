@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-11-03T21:58:38 IST" name="Default suite" finished-at="2025-11-03T21:58:43 IST" duration-ms="5492">
+    <groups>
+    </groups>
+    <test started-at="2025-11-03T21:58:38 IST" name="Default test" finished-at="2025-11-03T21:58:43 IST" duration-ms="5492">
+      <class name="LocalhostAPI.LocalhostAPI">
+        <test-method signature="getReqquest()[pri:1, instance:LocalhostAPI.LocalhostAPI@6a6cb05c]" started-at="2025-11-03T21:58:38 IST" name="getReqquest" finished-at="2025-11-03T21:58:42 IST" duration-ms="4461" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getReqquest -->
+        <test-method signature="CreateRequest()[pri:2, instance:LocalhostAPI.LocalhostAPI@6a6cb05c]" started-at="2025-11-03T21:58:42 IST" name="CreateRequest" finished-at="2025-11-03T21:58:43 IST" duration-ms="694" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CreateRequest -->
+        <test-method signature="PatchRequest()[pri:3, instance:LocalhostAPI.LocalhostAPI@6a6cb05c]" started-at="2025-11-03T21:58:43 IST" name="PatchRequest" finished-at="2025-11-03T21:58:43 IST" duration-ms="105" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- PatchRequest -->
+        <test-method signature="deleteReqquest()[pri:4, instance:LocalhostAPI.LocalhostAPI@6a6cb05c]" started-at="2025-11-03T21:58:43 IST" name="deleteReqquest" finished-at="2025-11-03T21:58:43 IST" duration-ms="108" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteReqquest -->
+      </class> <!-- LocalhostAPI.LocalhostAPI -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
