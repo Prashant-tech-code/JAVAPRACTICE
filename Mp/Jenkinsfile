@@ -1,0 +1,37 @@
+pipeline {
+    agent any
+
+    tools {
+        maven 'maven'
+        jdk 'jdk11'
+    }
+
+    stages {
+        stage('Checkout Code') {
+            steps {
+                git branch: 'Java_Practice', url: 'https://github.com/Prashant-tech-code/JAVAPRACTICE.git'
+            }
+        }
+
+        stage('Build and Run Highestno') {
+            steps {
+                bat '''
+                    cd Mp
+                    echo 10>input.txt
+                    echo 25>>input.txt
+                    echo 30>>input.txt
+                    mvn clean test-compile exec:java -Dexec.mainClass=myjava.Highestno -Dexec.classpathScope=test < input.txt
+                '''
+            }
+        }
+    }
+
+    post {
+        success {
+            echo '✅ Build succeeded!'
+        }
+        failure {
+            echo '❌ Build failed!'
+        }
+    }
+}
