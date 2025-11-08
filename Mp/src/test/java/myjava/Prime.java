@@ -28,10 +28,10 @@ public class Prime {
 		}
 		
 		if(isprime) {
-			System.out.println("Given no is prime");
+			System.out.println(a +": Given no is prime");
 		}
 		else {
-			System.out.println("Not a primeno");
+			System.out.println(a+ ": Not a primeno");
 		}
 		
 		
