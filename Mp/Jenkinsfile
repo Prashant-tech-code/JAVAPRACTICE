@@ -52,11 +52,6 @@ pipeline {
                 echo '🚀 Running ArrayHighest.java using Scanner input...'
                 bat '''
                     cd Mp
-                    echo 12>arrayinput.txt
-                    echo 45>>arrayinput.txt
-                    echo 89>>arrayinput.txt
-                    echo 23>>arrayinput.txt
-                    echo 67>>arrayinput.txt
                     mvn exec:java -Dexec.mainClass=myjava.Highestfromarray -Dexec.classpathScope=test < arrayinput.txt
                 '''
             }
